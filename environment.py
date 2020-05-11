@@ -77,12 +77,12 @@ class ETFEnvironment:
         self.data = self.load_data()
 
     def load_data(self):
-        volumes = np.genfromtxt(self.volumes, delimiter=',')[2:, 1:]
+        # volumes = np.genfromtxt(self.volumes, delimiter=',')[2:, 1:]
         prices = np.genfromtxt(self.prices, delimiter=',')[2:, 1:]
         returns=pd.read_csv(self.returns, index_col=0)
         assets=np.array(returns.columns)
         dates=np.array(returns.index)
-        returns=returns.as_matrix()
+        # returns=returns.as_matrix()
         return pd.DataFrame(prices, 
              columns = assets,
              index = dates
